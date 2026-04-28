@@ -38,13 +38,13 @@
     --primary-glow: rgba(224, 123, 76, 0.15);
 
     /* Light Theme Mapping */
-    --bg: #FFFFFF;
-    --bg-elevated: #F9FAFB;
-    --bg-surface: #F3F4F6;
-    --text-primary: #2D2D2D;
-    --text-medium: #4A4A4A;
-    --text-light: #6B6B6B;
-    --border-color: #E5E7EB;
+    --bg: #FAFAFA;
+    --bg-elevated: #F4F4F5;
+    --bg-surface: #E4E4E7;
+    --text-primary: #27272A;
+    --text-medium: #52525B;
+    --text-light: #71717A;
+    --border-color: #D4D4D8;
   }
 
   .dark {

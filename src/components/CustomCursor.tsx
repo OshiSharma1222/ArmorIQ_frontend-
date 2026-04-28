@@ -17,8 +17,8 @@ export function CustomCursor() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    // Center cursor initially
-    gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+    // Center cursor initially but keep hidden
+    gsap.set(cursor, { xPercent: -50, yPercent: -50, opacity: 0 });
 
     const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     const mouse = { x: pos.x, y: pos.y };
@@ -27,7 +27,13 @@ export function CustomCursor() {
     const xSet = gsap.quickSetter(cursor, "x", "px");
     const ySet = gsap.quickSetter(cursor, "y", "px");
 
+    let hasMoved = false;
+
     const onMouseMove = (e: MouseEvent) => {
+      if (!hasMoved) {
+        gsap.to(cursor, { opacity: 1, duration: 0.3 });
+        hasMoved = true;
+      }
       mouse.x = e.x;
       mouse.y = e.y;
     };
@@ -74,7 +80,7 @@ export function CustomCursor() {
   return (
     <div 
       ref={cursorRef} 
-      className="fixed top-0 left-0 w-6 h-6 rounded-full border-2 border-primary bg-primary/20 pointer-events-none z-[9999] mix-blend-difference hidden md:block"
+      className="fixed top-0 left-0 w-6 h-6 rounded-full border-2 border-primary bg-primary/20 pointer-events-none z-[9999] mix-blend-difference hidden md:block opacity-0"
     />
   );
 }

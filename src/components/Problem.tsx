@@ -24,11 +24,11 @@ export function Problem() {
       }
     });
 
-    problemTl.fromTo(".bad-agent", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 })
-             .fromTo(".bad-resource", { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 }, "<")
-             .fromTo(".bad-arrow", { width: 0, opacity: 0 }, { width: 100, opacity: 1, duration: 0.5 })
-             .to(".bad-arrow", { stroke: "var(--color-accent-red)", duration: 0.2 })
-             .fromTo(".bad-alert", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out" });
+    problemTl.fromTo(".bad-agent", { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" })
+             .fromTo(".bad-resource", { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "<")
+             .fromTo(".bad-arrow", { width: 0, opacity: 0 }, { width: 100, opacity: 1, duration: 0.6 })
+             .to(".bad-arrow", { stroke: "var(--color-accent-red)", duration: 0.3 })
+             .fromTo(".bad-alert", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.5)" });
 
     // Solution Diagram Animation
     const solutionTl = gsap.timeline({
@@ -40,13 +40,13 @@ export function Problem() {
       }
     });
 
-    solutionTl.fromTo(".good-agent", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 })
-              .fromTo(".good-resource", { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5 }, "<")
-              .fromTo(".good-shield", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out" }, "-=0.2")
-              .fromTo(".good-arrow-1", { width: 0, opacity: 0 }, { width: 40, opacity: 1, duration: 0.3 })
-              .to(".good-shield", { scale: 1.1, duration: 0.1, yoyo: true, repeat: 1 })
-              .fromTo(".good-arrow-2", { width: 0, opacity: 0 }, { width: 40, opacity: 1, duration: 0.3 })
-              .fromTo(".good-check", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out" });
+    solutionTl.fromTo(".good-agent", { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" })
+              .fromTo(".good-resource", { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "<")
+              .fromTo(".good-shield", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "back.out(1.5)" }, "-=0.3")
+              .fromTo(".good-arrow-1", { width: 0, opacity: 0 }, { width: 40, opacity: 1, duration: 0.4 })
+              .to(".good-shield", { scale: 1.15, duration: 0.15, yoyo: true, repeat: 1 })
+              .fromTo(".good-arrow-2", { width: 0, opacity: 0 }, { width: 40, opacity: 1, duration: 0.4 })
+              .fromTo(".good-check", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.5)" });
 
   }, { scope: sectionRef });
 
