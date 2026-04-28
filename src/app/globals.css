@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono&family=Sunflower:wght@300;500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -15,8 +16,8 @@
   --color-accent-red: #F87171;
   --color-accent-blue: #60A5FA;
 
-  --font-sans: var(--font-sunflower);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Sunflower', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
 
   --animate-marquee: marquee 25s linear infinite;
 }

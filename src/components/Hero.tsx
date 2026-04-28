@@ -35,7 +35,11 @@ export function Hero() {
       opacity: 0,
     }, {
       y: 150,
-      opacity: [0, 1, 1, 0],
+      keyframes: [
+        { opacity: 1, duration: 0.5 },
+        { opacity: 1, duration: 1 },
+        { opacity: 0, duration: 0.5 }
+      ],
       duration: 2,
       stagger: {
         each: 0.4,
