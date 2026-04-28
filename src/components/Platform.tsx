@@ -75,7 +75,7 @@ export function Platform() {
       title: "ArmorClaw",
       description: "Intent Assurance for OpenClaw agents. Cryptographic verification at every step.",
       icon: Code2,
-      className: "md:col-span-3 lg:col-span-2",
+      className: "md:col-span-3 lg:col-start-2 lg:col-span-2",
     },
   ];
 

@@ -151,43 +151,77 @@ export function Differentiation() {
         </div>
 
         {/* Comparison Table */}
-        <div className="comparison-table overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+        <div className="comparison-table overflow-x-auto bg-card rounded-2xl border border-border shadow-sm">
+          <table className="w-full text-left border-collapse min-w-[800px]">
             <thead>
-              <tr className="border-b border-border">
-                <th className="py-4 px-6 font-semibold text-muted w-1/3">Capability</th>
-                <th className="py-4 px-6 font-semibold text-muted text-center">IAM</th>
-                <th className="py-4 px-6 font-semibold text-muted text-center">Guardrails</th>
-                <th className="py-4 px-6 font-bold text-primary text-center bg-primary/5 rounded-t-lg">ArmorIQ</th>
+              <tr className="border-b border-border/50">
+                <th className="py-4 px-6 font-semibold text-muted w-1/6"></th>
+                <th className="py-4 px-6 font-bold text-primary text-center bg-primary/5 w-1/6 uppercase text-xs tracking-widest">ArmorIQ</th>
+                <th className="py-4 px-6 font-semibold text-muted text-center w-1/6 uppercase text-xs tracking-widest">Guardrails</th>
+                <th className="py-4 px-6 font-semibold text-muted text-center w-1/6 uppercase text-xs tracking-widest">IAM / RBAC</th>
+                <th className="py-4 px-6 font-semibold text-muted text-center w-1/6 uppercase text-xs tracking-widest">Sandbox / Isolation</th>
+                <th className="py-4 px-6 font-semibold text-muted text-center w-1/6 uppercase text-xs tracking-widest">Observability / Logs</th>
               </tr>
             </thead>
             <tbody>
               <tr className="comparison-row border-b border-border/50">
-                <td className="py-4 px-6">Controls API & Resource Access</td>
-                <td className="py-4 px-6 text-center"><Check className="w-5 h-5 mx-auto text-accent-green" /></td>
-                <td className="py-4 px-6 text-center"><X className="w-5 h-5 mx-auto text-muted/50" /></td>
-                <td className="py-4 px-6 text-center bg-primary/5"><Check className="w-5 h-5 mx-auto text-primary" /></td>
+                <td className="py-6 px-6 font-medium text-sm">Core question</td>
+                <td className="py-6 px-6 text-center font-bold text-sm bg-primary/5 text-foreground">Why is this action<br/>happening?</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Is the output safe?</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Who is allowed?</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Is it contained?</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">What happened?</td>
               </tr>
               <tr className="comparison-row border-b border-border/50">
-                <td className="py-4 px-6">Validates Prompt/Response Content</td>
-                <td className="py-4 px-6 text-center"><X className="w-5 h-5 mx-auto text-muted/50" /></td>
-                <td className="py-4 px-6 text-center"><Check className="w-5 h-5 mx-auto text-accent-green" /></td>
-                <td className="py-4 px-6 text-center bg-primary/5"><X className="w-5 h-5 mx-auto text-muted/50" /></td>
+                <td className="py-6 px-6 font-medium text-sm">What it checks</td>
+                <td className="py-6 px-6 text-center font-bold text-sm bg-primary/5 text-foreground">Every action & decision</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Output text</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Access permissions</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Execution environment</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Events, logs, traces</td>
               </tr>
               <tr className="comparison-row border-b border-border/50">
-                <td className="py-4 px-6">Intercepts Cryptographic Intent</td>
-                <td className="py-4 px-6 text-center"><X className="w-5 h-5 mx-auto text-muted/50" /></td>
-                <td className="py-4 px-6 text-center"><X className="w-5 h-5 mx-auto text-muted/50" /></td>
-                <td className="py-4 px-6 text-center bg-primary/5"><Check className="w-5 h-5 mx-auto text-primary" /></td>
+                <td className="py-6 px-6 font-medium text-sm">When it acts</td>
+                <td className="py-6 px-6 text-center font-bold text-sm bg-primary/5 text-foreground">Before execution</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">After execution</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">At login / auth</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">During execution</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">After execution</td>
               </tr>
               <tr className="comparison-row border-b border-border/50">
-                <td className="py-4 px-6">Prevents In-Scope Overreach</td>
-                <td className="py-4 px-6 text-center"><X className="w-5 h-5 mx-auto text-muted/50" /></td>
-                <td className="py-4 px-6 text-center"><X className="w-5 h-5 mx-auto text-muted/50" /></td>
-                <td className="py-4 px-6 text-center bg-primary/5 rounded-b-lg"><Check className="w-5 h-5 mx-auto text-primary" /></td>
+                <td className="py-6 px-6 font-medium text-sm">What goes wrong</td>
+                <td className="py-6 px-6 text-center font-bold text-lg bg-primary/5 text-foreground">—</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Harmful output slips</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Unauthorized access</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Escape / breakout</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Too late / alert fatigue</td>
+              </tr>
+              <tr className="comparison-row border-b border-border/50">
+                <td className="py-6 px-6 font-medium text-sm">What it verifies</td>
+                <td className="py-6 px-6 text-center font-bold text-sm bg-primary/5 text-foreground">Intent validity</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Content safety</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Identity</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">Isolation boundaries</td>
+                <td className="py-6 px-6 text-center text-sm text-muted">System behavior</td>
+              </tr>
+              <tr className="comparison-row">
+                <td className="py-6 px-6 font-medium text-sm">Stops rogue actions</td>
+                <td className="py-6 px-6 text-center font-medium text-sm bg-primary/5 text-accent-green flex items-center justify-center gap-1.5"><Check className="w-4 h-4"/> Yes</td>
+                <td className="py-6 px-6 text-center text-sm text-muted/60"><div className="flex items-center justify-center gap-1.5"><X className="w-4 h-4"/> No</div></td>
+                <td className="py-6 px-6 text-center text-sm text-muted/60"><div className="flex items-center justify-center gap-1.5"><X className="w-4 h-4"/> No</div></td>
+                <td className="py-6 px-6 text-center text-sm text-primary max-w-[140px] mx-auto leading-tight">
+                  <div className="flex flex-col items-center justify-center gap-1"><span className="text-base leading-none">⚠️</span> Contains, not prevents</div>
+                </td>
+                <td className="py-6 px-6 text-center text-sm text-muted/60"><div className="flex items-center justify-center gap-1.5"><X className="w-4 h-4"/> No</div></td>
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div className="mt-12 text-center comparison-row">
+          <p className="text-2xl font-semibold tracking-tight">
+            Guardrails stop bad <span className="text-muted">responses</span>. ArmorIQ stops bad <span className="text-primary">actions</span>.
+          </p>
         </div>
 
       </div>
